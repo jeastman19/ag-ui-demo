@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# ag-ui-demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interfaz de ejemplo construida con [ag-ui-protocol](https://www.npmjs.com/package/ag-ui-protocol), desarrollada con Vite, React, TypeScript y TailwindCSS. Este proyecto demuestra cómo integrar una interfaz moderna con la API de OpenAI mediante un formulario de entrada simple.
 
-Currently, two official plugins are available:
+## ✨ Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ React + TypeScript
+- ⚡️ Vite para desarrollo rápido
+- 💬 Comunicación con la API de OpenAI (`chat/completions`)
+- 🎨 Estilizado con TailwindCSS
+- 🔐 Soporte para `.env.local` para manejar la API key de forma segura
 
-## Expanding the ESLint configuration
+## 📦 Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/jeastman19/ag-ui-demo.git
+cd ag-ui-demo
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Uso en desarrollo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Primero, crea un archivo `.env.local` basado en `.env.example` y agrega tu API key de OpenAI:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```env
+VITE_OPENAI_API_KEY=tu_clave_aquí
 ```
+
+Luego inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en `http://localhost:5173`.
+
+## 🧪 Scripts disponibles
+
+- `npm run dev` — Ejecuta el servidor de desarrollo
+- `npm run build` — Compila la aplicación para producción
+- `npm run preview` — Previsualiza la build de producción localmente
+
+## 📁 Estructura del proyecto
+
+```
+ag-ui-demo/
+├── public/              # Archivos públicos
+├── src/
+│   ├── components/      # Componentes reutilizables
+│   ├── App.tsx          # Componente principal
+│   ├── main.tsx         # Punto de entrada
+│   └── index.css        # Estilos globales (incluye Tailwind)
+├── .env.example         # Ejemplo de variables de entorno
+├── tailwind.config.js   # Configuración de Tailwind
+└── vite.config.ts       # Configuración de Vite
+```
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver el archivo [LICENSE](./LICENSE) para más detalles.
+
+---
+
+Desarrollado por [Jorge Eastman](https://github.com/jeastman19) ✨
